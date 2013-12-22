@@ -1,4 +1,4 @@
-regular-rect-sktexture-subtexture
+regular rect sktexture subtexture
 =================================
 
 SKTexture Regular Rect Coordinates Subtexture
