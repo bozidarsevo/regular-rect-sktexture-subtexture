@@ -1,25 +1,29 @@
 SKTexture Regular Rect Coordinates Subtexture
 =================================
 
-Details
+Use regular CGRect coordinates to get subtextures from SKTexture in Sprite Kit code. This was made using Objective C categories.
+
+Why this?
 ---
-I was playing a bit with SKTexture and the method
+I was playing a bit with **SKTexture** and the method
 ```objc
 + (SKTexture *)textureWithRect:(CGRect)rect inTexture:(SKTexture *)texture
 ```
 and I did not get the results as I expected.
 Then I went to see details about that method in the documentation and there was this part about the "rect" argument:
->A rectangle in the *unit* coordinate space that specifies the portion of the texture to use.
-So as you see, you need to use *unit* coordinate space coordinates. In most of methods that I used *CGRect* I used regular CGRect, example: (30, 20, 100, 300). That is why I made this *SKTexture* category. There are two methods added to *SKTexture*.
+>A rectangle in the **unit** coordinate space that specifies the portion of the texture to use.
+
+So as you see, you need to use **unit** coordinate space coordinates. In most of methods that I used **CGRect** I used regular CGRect, example: (30, 20, 100, 300). That is why I made this *SKTexture* category. There are two methods added to *SKTexture*.
 
 Methods
 ---
+I added two methods to **SKTexture** using Objective C categories
 
-First method returns *CGRect* in unit coordinates from CGRect in regular coordinates
+First method returns **CGRect** in unit coordinates from CGRect in regular coordinates
 ```objc
 + (CGRect)unitRectFromRegularRect:(CGRect)rect inTexture:(SKTexture *)texture;
 ```
-Second method returns *SKTexture* subtexture from texture using regular CGRect
+Second method returns **SKTexture** subtexture from texture using regular CGRect
 ```objc
 + (SKTexture *)textureWithRegularRect:(CGRect)rect inTexture:(SKTexture *)texture;
 ```
