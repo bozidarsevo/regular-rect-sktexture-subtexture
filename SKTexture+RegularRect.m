@@ -23,8 +23,8 @@
     
     CGFloat xRect = rect.origin.x;
     CGFloat yRect = rect.origin.y;
-    CGFloat widthRect = rect.size.width;
-    CGFloat heightRect = rect.size.height;
+    CGFloat widthRect = rect.size.width + xRect;
+    CGFloat heightRect = rect.size.height + yRect;
     
     
     // X PART
@@ -35,6 +35,7 @@
     else if (xRect > textureWidth) {
         xRect = textureWidth;
         widthRect = textureWidth;
+    }
     // Y PART
     if (yRect < 0.0) {
         heightRect = heightRect + yRect;
@@ -65,19 +66,20 @@
     if (heightRect < yRect) {
         heightRect = yRect;
     }
-        
     // FINAL
     xFinal = xRect / textureWidth;
     yFinal = yRect / textureHeight;
     widthFinal = (widthRect - xRect) / textureWidth;
-    heightRect = (heightRect - yRect) / textureHeight;
+    heightFinal = (heightRect - yRect) / textureHeight;
 
-//    return CGRectMake(xFinal, yFinal, widthFinal, heightFinal);
+    return CGRectMake(xFinal, yFinal, widthFinal, heightFinal);
 }
-    
+
 + (SKTexture *)textureWithRegularRect:(CGRect)rect inTexture:(SKTexture *)texture
 {
+    CGRect unitRect = [self unitRectFromRegularRect:rect inTexture:texture];
     
+    return [SKTexture textureWithRect:unitRect inTexture:texture];
 }
     
 @end
