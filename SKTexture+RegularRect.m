@@ -5,6 +5,7 @@
 //  Created by Božidar Ševo on 22.12.2013..
 //
 //
+// you can find details on Github at https://github.com/bozidarsevo/regular-rect-sktexture-subtexture
 
 #import "SKTexture+RegularRect.h"
 
@@ -36,6 +37,7 @@
         xRect = textureWidth;
         widthRect = textureWidth;
     }
+    
     // Y PART
     if (yRect < 0.0) {
         heightRect = heightRect + yRect;
@@ -56,6 +58,7 @@
     if (widthRect < xRect) {
         widthRect = xRect;
     }
+    
     // HEIGHT
     if (heightRect < 0.0) {
         heightRect = 0.0;
@@ -66,6 +69,7 @@
     if (heightRect < yRect) {
         heightRect = yRect;
     }
+    
     // FINAL
     xFinal = xRect / textureWidth;
     yFinal = yRect / textureHeight;

@@ -5,6 +5,7 @@
 //  Created by Božidar Ševo on 22.12.2013..
 //
 //
+// you can find details on Github at https://github.com/bozidarsevo/regular-rect-sktexture-subtexture
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>

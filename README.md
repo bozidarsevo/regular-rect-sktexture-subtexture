@@ -49,6 +49,7 @@ CGRect regularRect = CGRectMake(-10, 20, 50, 30);
 SKTexture *subTexture = [SKTexture textureWithRegularRect:regularRect inTexture:yourTexture];
 ```
 is the same as:
+```objc
 CGRect regularRect = CGRectMake(0, 20, 40, 30);
 //your SKTexture is loaded to "yourTexture" variable
 SKTexture *subTexture = [SKTexture textureWithRegularRect:regularRect inTexture:yourTexture];
