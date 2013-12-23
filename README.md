@@ -37,3 +37,23 @@ CGRect regularRect = CGRectMake(10, 20, 40, 30);
 SKTexture *subTexture = [SKTexture textureWithRegularRect:regularRect inTexture:yourTexture];
 ```
 And this code will calculate your regular CGRect to unit coordinate space and return you the correct subtexture.
+
+Method Arguments
+---
+You can pass CGRect of any values. If any of *width* or *height* is negative you will get back CGRect (0,0,0,0) or subtexture with that CGRect.
+If you have negative *x* or *y* in CGRect, values will be translated to 0 and width or height will also be changed.
+For example:
+```objc
+CGRect regularRect = CGRectMake(-10, 20, 50, 30);
+//your SKTexture is loaded to "yourTexture" variable
+SKTexture *subTexture = [SKTexture textureWithRegularRect:regularRect inTexture:yourTexture];
+```
+is the same as:
+CGRect regularRect = CGRectMake(0, 20, 40, 30);
+//your SKTexture is loaded to "yourTexture" variable
+SKTexture *subTexture = [SKTexture textureWithRegularRect:regularRect inTexture:yourTexture];
+```
+
+You
+---
+I hope this will help you as well as it did to me :)
